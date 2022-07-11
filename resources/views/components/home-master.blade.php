@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
   <!-- Custom styles for this template -->
   <link href="{{asset('css/blog-home.css')}}" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 </head>
 
