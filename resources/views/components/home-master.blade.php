@@ -12,12 +12,13 @@
   <title>Blog Home - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
   <!-- Custom styles for this template -->
   <link href="{{asset('css/blog-home.css')}}" rel="stylesheet">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 </head>
 
