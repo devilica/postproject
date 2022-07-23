@@ -25,7 +25,9 @@ Route::middleware(['auth', 'admin'])->group(function(){
 
     Route::get('/admin/posts/create', 'PostController@create')->name('post.create');
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
+
     Route::get('/users', 'UserController@index')->name('users.index');
+    Route::get('/change/usertype/{id}', 'UserController@changeUsertype');
 
 
     Route::get('sendmail/{id}', 'SendMailController@testMail')->name('sendmail');

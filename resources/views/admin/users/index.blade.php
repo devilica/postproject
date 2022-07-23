@@ -1,8 +1,17 @@
 <x-admin-master>
 
 @section('content')
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 
 <h1 class="h3 mb-4 text-gray-800">Users</h1>
+
+
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
 
 
             <table class="table table-striped">
@@ -30,7 +39,7 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->firstname}}</td>
                 <td>{{$user->lastname}}</td>
-                <td>{{$user->user_type}}</td>
+                <td>{{$user->user_type}} <a href="{{url('/change/usertype/'.$user->id)}}" ><i class="fa fa-pencil" aria-hidden="true"></i></a> </td>
                 <td>{{$user->created_at}}</td>
                 <td><a href="{{route('sendmail', $user->id)}}" class="btn btn-primary">Email</a></td>
                 </tr>

@@ -11,7 +11,7 @@ class UserController extends Controller
 
     public function index(){
 
-        $users=User::orderBy('id','desc')->paginate('20');
+        $users=User::orderBy('id','asc')->paginate('20');
 
 
         return view('admin.users.index', [
@@ -19,6 +19,29 @@ class UserController extends Controller
         ]);
 
     }
+
+
+    public function changeUsertype($id){
+
+        $user=User::find($id);
+        if($user->user_type=='user'){
+            $user->user_type='admin';
+            $user->save();
+        }else{
+            $user->user_type='user';
+            $user->save();
+        }
+        return back()->with('message', 'Successfully changed user type');
+
+
+
+    }
+
+
+
+
+
+
 
 
 }
