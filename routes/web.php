@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,11 +21,19 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/post/{post}', 'PostController@show')->name('post');
 
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth', 'admin'])->group(function(){
 
-    Route::get('/admin', 'AdminsController@index')->name('admin.index');
     Route::get('/admin/posts/create', 'PostController@create')->name('post.create');
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
+    Route::get('/users', 'UserController@index')->name('users.index');
 
 
+    
 });
+
+
+Route::middleware(['auth'])->group(function(){
+
+    Route::get('/admin', 'AdminsController@index')->name('admin.index');
+    
+    });

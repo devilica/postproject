@@ -19,12 +19,12 @@
      class="form-control" id="title"
       aria-describedby="emailHelp" placeholder="Enter title">
   </div>
-  <div class="form-group">
+ <!-- <div class="form-group">
     <label for="file">File</label>
     <input type="file" name="post_image" 
      class="form-control-file" id="post_image"
       >
-  </div>
+  </div>-->
   <div class="form-group">
     <textarea name="body" class="form-control" id="body" cols="30" rows="10"></textarea>
      </div>

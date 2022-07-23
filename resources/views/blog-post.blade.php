@@ -20,7 +20,7 @@
 <hr>
 
 <!-- Preview Image -->
-<img class="img-fluid rounded" src="{{asset('storage/'.$post->post_image)}}" alt="">
+ <!-- <img class="img-fluid rounded" src="{{asset('uploads/slika1.png')}}" alt=""> -->
 
 <hr>
 

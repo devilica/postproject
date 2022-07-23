@@ -17,6 +17,9 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->morphs('tokenable');
             $table->string('name');
+            $table->string('user_type')->default('user');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('token', 64)->unique();
             $table->text('abilities')->nullable();
             $table->timestamp('last_used_at')->nullable();
