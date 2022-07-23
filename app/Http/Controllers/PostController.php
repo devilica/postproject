@@ -39,7 +39,7 @@ class PostController extends Controller
         }
 
         auth()->user()->posts()->create($inputs);
-        return back();
+        return back()->with('message', 'Successfully created!');
 
 
 
