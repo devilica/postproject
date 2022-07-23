@@ -35,7 +35,7 @@ class PostController extends Controller
 
         ]);
         if(request('post_image')){
-            $inputs['post_image']=request('post_image')->store('images');
+            $inputs['post_image']=request('post_image')->store('uploads');
         }
 
         auth()->user()->posts()->create($inputs);
