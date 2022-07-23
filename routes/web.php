@@ -28,6 +28,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/users', 'UserController@index')->name('users.index');
 
 
+    Route::get('sendmail/{id}', 'SendMailController@testMail')->name('sendmail');
     
 });
 

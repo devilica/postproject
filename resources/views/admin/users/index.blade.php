@@ -10,10 +10,13 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Username</th>
+                <th scope="col">Email</th>
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
                 <th scope="col">Usertype</th>
                 <th scope="col">Join</th>
+                <th scope="col">Send email</th>
+
 
                 </tr>
             </thead>
@@ -24,10 +27,12 @@
                 <tr>
                 <th scope="row">{{$user->id}}</th>
                 <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
                 <td>{{$user->firstname}}</td>
                 <td>{{$user->lastname}}</td>
                 <td>{{$user->user_type}}</td>
                 <td>{{$user->created_at}}</td>
+                <td><a href="{{route('sendmail', $user->id)}}" class="btn btn-primary">Email</a></td>
                 </tr>
                 @endforeach
 
