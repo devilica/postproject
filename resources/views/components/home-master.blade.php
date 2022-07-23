@@ -10,6 +10,8 @@
   <meta name="author" content="">
 
   <title>Blog Home - Start Bootstrap Template</title>
+  <link rel="shortcut icon" href="http://app.com/favicon.ico" />
+
 
   <!-- Bootstrap core CSS -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
