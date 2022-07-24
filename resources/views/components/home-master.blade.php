@@ -11,6 +11,8 @@
 
   <title>Blog Home - Start Bootstrap Template</title>
   <link rel="shortcut icon" href="http://app.com/favicon.ico" />
+  <script src="https://app.simplefileupload.com/buckets/776f36fbb05865feb85a49e2794cc14c.js"></script>
+
 
 
   <!-- Bootstrap core CSS -->

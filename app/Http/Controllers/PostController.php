@@ -30,15 +30,15 @@ class PostController extends Controller
 
         $inputs=request()->validate([
             'title'=>'required|min:6',
-           //'post_image'=>'file',
+           'post_image'=>'file',
             'body'=>'required'
 
-        ]);
-       /* if(request('post_image')){
+        ]); 
+        if(request('post_image')){
             $inputs['post_image']=request('post_image')->store('images');
-        }*/
+        }
 
-        //$inputs['post_image']='null';
+       
         
         auth()->user()->posts()->create($inputs);
         return back()->with('message', 'Successfully created!');

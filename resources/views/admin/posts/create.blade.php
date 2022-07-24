@@ -25,6 +25,13 @@
      class="form-control-file" id="post_image"
       >
   </div>-->
+
+  <div class="form-group">
+    <label for="file">File</label>
+  <input type="hidden" name="post_image" id="post_image" class="simple-file-upload">
+  </div>
+
+
   <div class="form-group">
     <textarea name="body" class="form-control" id="body" cols="30" rows="10"></textarea>
      </div>
