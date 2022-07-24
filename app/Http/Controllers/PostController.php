@@ -34,11 +34,14 @@ class PostController extends Controller
             'body'=>'required'
 
         ]); 
-        if(request('post_image')){
+        /*if(request('post_image')){
             $inputs['post_image']=request('post_image')->store('images');
         }
-
-       
+*/
+        $imageName = time().'.'.$request->post_image->extension();  
+            
+        $path = Storage::disk('s3')->put('images', $request->post_image);
+        $path = Storage::disk('s3')->url($path);
         
         auth()->user()->posts()->create($inputs);
         return back()->with('message', 'Successfully created!');
