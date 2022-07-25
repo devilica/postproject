@@ -30,19 +30,19 @@ class PostController extends Controller
 
         $inputs=request()->validate([
             'title'=>'required|min:6',
-           'post_image'=>'file',
+          // 'post_image'=>'file',
             'body'=>'required'
 
         ]); 
         /*if(request('post_image')){
             $inputs['post_image']=request('post_image')->store('images');
         }
-*/
+
         $imageName = time().'.'.$request->post_image->extension();  
             
         $path = Storage::disk('s3')->put('devilica', $request->post_image);
         $path = Storage::disk('s3')->url($path);
-
+*/
         
 
         
