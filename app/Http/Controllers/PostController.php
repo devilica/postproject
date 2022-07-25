@@ -40,8 +40,11 @@ class PostController extends Controller
 */
         $imageName = time().'.'.$request->post_image->extension();  
             
-        $path = Storage::disk('s3')->put('images', $request->post_image);
+        $path = Storage::disk('s3')->put('devilica', $request->post_image);
         $path = Storage::disk('s3')->url($path);
+
+        
+
         
         auth()->user()->posts()->create($inputs);
         return back()->with('message', 'Successfully created!');
