@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Userprofile;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\RegisterNewUser;
 
 class RegisterController extends Controller
 {
@@ -22,7 +24,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers, RegisterNewUser;
 
     /**
      * Where to redirect users after registration.
@@ -66,12 +68,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user=User::create([
             'name' => $data['name'],
-            'firstname' => $data['firstname'],
-            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-    }
+
+        if ($user) {
+            $userprofile = $this->createuserprofile($user);
+            $user_profile = Userprofile::where('user_id', $user->id)->first();
+            $user_profile->firstname = $data['firstname'];
+            $user_profile->lastname = $data['lastname'];
+            $user_profile->save();
+
+           
+        }
+
+        //Mail::to($user->email)->bcc(Config::get('crypto.BCC_ADDRESS'))->queue(new RegisterNewUser($user));
+
+
+        return $user;
+
+}
+
 }

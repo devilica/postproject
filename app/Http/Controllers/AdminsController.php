@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class AdminsController extends Controller
 {
     
@@ -12,4 +13,5 @@ class AdminsController extends Controller
         return view('admin.index');
     }
 
+    
 }

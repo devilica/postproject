@@ -4,11 +4,7 @@
 
 <h1>Create</h1>
 
-@if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-@endif
+
 
 
 <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
