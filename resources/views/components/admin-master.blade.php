@@ -24,6 +24,13 @@
   <!-- Custom styles for this template-->
   <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+
+
 </head>
 
 <body id="page-top">
@@ -331,11 +338,17 @@
 
           <!-- Page Heading -->
 
-          @if(session()->has('message'))
-          <div class="alert alert-success">
-              {{ session()->get('message') }}
-          </div>
-          @endif
+         
+                       @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div>
+                        @elseif(session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('error') }}
+                            </div>
+                        @endif
+
             @yield('content')
         </div>
         <!-- /.container-fluid -->

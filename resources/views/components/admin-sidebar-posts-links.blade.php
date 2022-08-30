@@ -22,7 +22,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Users</h6>
             <a class="collapse-item" href="{{route('users.index')}}">List of users</a>
-           
+            <a class="collapse-item" href="{{route('blacklist.index')}}">Blacklist</a>
+
           </div>
         </div>
       </li>      

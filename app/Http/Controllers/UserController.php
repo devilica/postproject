@@ -33,10 +33,10 @@ class UserController extends Controller
         }
         return back()->with('message', 'Successfully changed user type');
 
-
-
     }
 
+
+    
 
 
 

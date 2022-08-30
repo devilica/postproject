@@ -27,6 +27,15 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
 
     Route::get('/users', 'UserController@index')->name('users.index');
+
+    Route::get('/blacklist', 'BlacklistUserController@index')->name('blacklist.index');
+    Route::post('/blacklist/store', 'BlacklistUserController@store')->name('blacklist.store');
+    Route::get('/blacklist/user/{id}', 'BlacklistUserController@editUser');
+    Route::post('/blackupdate/user/{id}', 'BlacklistUserController@updateUser')->name('blackuser.update');
+    Route::get('/blacklist/{id}', 'BlacklistUserController@destroy');
+    Route::get('/export/blacklist', 'ExportController@blacklist');
+    Route::post('/import/blacklist', 'BlacklistUserController@uploadContent')->name('file.upload');
+
     Route::get('/change/usertype/{id}', 'UserController@changeUsertype');
 
 
