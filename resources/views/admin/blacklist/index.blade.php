@@ -63,12 +63,12 @@
                                             <form method="post" action="{{route('blacklist.store')}}" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label for="firstname">Name</label>
+                                                    <label for="firstname">Firstname</label>
                                                     <input type="text" class="form-control" id="firstname" name="firstname">
                                                     <small class="text-danger">{{ $errors->first('firstname') }}</small>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lastname">Surname</label>
+                                                    <label for="lastname">Lastname</label>
                                                     <input type="text" class="form-control" id="lastname" name="lastname">
                                                     <small class="text-danger">{{ $errors->first('lastname') }}</small>
 

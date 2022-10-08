@@ -51,5 +51,11 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/userprofile', 'UserprofileController@updateProfile')->name('update.profile');
 
 
-
     });
+
+Route::get('test', 'GmailController@test');    
+Route::get('gmailprofile', 'GmailController@getProfile');    
+
+Route::get('google/login/url', 'GmailController@getAuthUrl');
+Route::get('client', 'GmailController@getClient');
+

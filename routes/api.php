@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 */
 
 Route::resource('posts','PostController');
+
+Route::post('google/auth/login', '\App\Http\Controllers\api\GoogleController@postLogin');

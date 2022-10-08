@@ -1,0 +1,14 @@
+{
+    "web": {
+      "client_id": "408781860431-r1it50v2b2q0c0nm9160624a736n8mhn.apps.googleusercontent.com",
+      "project_id": "horizontal-cab-362013",
+      "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+      "token_uri": "https://accounts.google.com/o/oauth2/token",
+      "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+      "client_secret": "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",
+      "scope":"https://www.googleapis.com/auth/gmail.modify",
+      "redirect_uris": [
+        "https://oauth.pstmn.io/v1/callback"
+      ]
+    }
+  }
